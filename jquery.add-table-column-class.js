@@ -10,21 +10,18 @@
     //find the index of the target column
     function _getTargetColumnIndex($obj, opts) {
         var targetColumnIndex;
-        
         $($obj.selector + " col").each(function(index, element){
             if($(element).hasClass(opts.targetColumnClass) == true){
                 targetColumnIndex = index;
                 return false;
             }
         });
-
         return targetColumnIndex;
     }
 
     //add the class to all td in the column
     function _addClassToColumns($obj, opts, targetColumnIndex){
         $($obj.selector + " tbody tr").each(function(index, element){
-            console.log('test');
             $(element.tagName + ' td:nth-child(' + (targetColumnIndex + 1) + ')').addClass(opts.classesToAdd);
         });
     }
