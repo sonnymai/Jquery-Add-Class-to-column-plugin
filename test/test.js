@@ -46,3 +46,17 @@ test("td's in target column contains class", function(){
 	equals(numberOfTableBodyRows, numberOfTableBodyRowsWithAddedClass.highlight);
 	equals(numberOfTableBodyRows, numberOfTableBodyRowsWithAddedClass.center);
 });
+
+test("The class in the td's are in the correct column", function(){
+	//@TODO finish this off
+    var targetColumnIndex;
+	
+	//get the index number of the target column 
+    $(addTableColumnClass.testTable.selector + " col").each(function(index, element){
+        if($(element).hasClass('name') == true){
+            targetColumnIndex = index;
+            return false;
+        }
+    });
+	
+});
