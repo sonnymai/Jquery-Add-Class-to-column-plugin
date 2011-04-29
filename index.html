@@ -1,0 +1,74 @@
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Add class to table column jquery plugin</title> 
+	<link rel="stylesheet" href="../qunit/qunit.css" type="text/css" media="screen"> 
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.add-table-column-class.js"></script>
+	
+	<style type="text/css" media="screen">
+
+		td{
+			width: 70px;
+			text-align: right;;
+			border: 1px solid #000
+		}
+		
+		.center{
+			text-align: center;
+		}
+		
+		.name{
+			color: green;
+		}
+
+	</style>
+</head> 
+<body> 
+
+
+	<table id="people">
+	  <colgroup>
+	    <col class="name"/>
+	    <col class="age"/>
+	    <col class="gender"/>
+	  </colgroup>
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th>Age</th>
+	      <th>Gender</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>John</td>
+	      <td>30</td>
+	      <td>Male</td>
+	    </tr>
+	    <tr>
+	      <td>Jane</td>
+	      <td>22</td>
+	      <td>Female</td>
+	    </tr>
+	    <tr>
+	      <td>Darth</td>
+	      <td>132</td>
+	      <td>Male</td>
+	    </tr>
+	</table>
+
+	<script>
+	    $(document).ready(function() {
+	        $('#people').addTableColumnClass({
+	          targetColumnClass: 'name',
+	          classesToAdd: 'name center'
+	        });
+	    });
+	</script>
+
+
+</body> 
+</html>
